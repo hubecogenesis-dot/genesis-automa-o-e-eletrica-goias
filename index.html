@@ -6,9 +6,9 @@
     <title>Genesis - Manutenção Elétrica, Instalações e Smart Home em Formosa</title>
     <meta name="description" content="Soluções completas em elétrica e tecnologia para sua casa ou empresa em Formosa. Solicite seu orçamento gratuito.">
     <!-- FontAwesome para Ícones -->
-    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Cores Universais e Reset */
+        /* Cores Universais baseadas na Marca */
         * {
             margin: 0;
             padding: 0;
@@ -33,37 +33,40 @@
             line-height: 1.6;
         }
 
-        /* Cabeçalho / Logo */
+        /* Cabeçalho com o Novo Logotipo */
         header {
-            background-color: var(--bg-card);
+            background-color: #ffffff; /* Fundo branco para destacar o logo oficial */
             text-align: center;
-            padding: 30px 15px;
-            border-bottom: 3px solid var(--verde-marca);
+            padding: 20px 15px;
+            border-bottom: 4px solid var(--verde-marca);
         }
 
-        .logo-container h1 {
-            font-size: 2.5rem;
-            letter-spacing: 2px;
-            color: var(--texto-claro);
+        .logo-oficial {
+            max-width: 320px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
         }
 
-        .subtitle {
-            color: var(--texto-cinza);
-            font-size: 1rem;
-            margin-top: 5px;
-            text-transform: uppercase;
+        .header-location {
+            color: #0d1117;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 10px;
             letter-spacing: 1px;
         }
 
+        /* Selo Google Avaliações */
         .badge-avaliacao {
             display: inline-block;
-            background: rgba(243, 156, 18, 0.1);
+            background: #0d1117;
             color: var(--amarelo-marca);
-            padding: 5px 15px;
+            padding: 6px 16px;
             border-radius: 20px;
-            margin-top: 15px;
+            margin-top: 10px;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             border: 1px solid var(--amarelo-marca);
         }
 
@@ -75,8 +78,9 @@
         }
 
         .hero h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 15px;
+            font-weight: 800;
         }
 
         .hero h2 span {
@@ -85,37 +89,37 @@
 
         .hero p {
             color: var(--texto-cinza);
-            max-width: 600px;
-            margin: 0 auto 30px auto;
+            max-width: 650px;
+            margin: 0 auto 35px auto;
             font-size: 1.1rem;
         }
 
-        /* Botão de Conversão (WhatsApp via Contate.me) */
+        /* Botão do WhatsApp (Contate.me) */
         .btn-whatsapp {
             display: inline-flex;
             align-items: center;
             background-color: var(--wpp-cor);
             color: #fff;
             text-decoration: none;
-            padding: 15px 30px;
+            padding: 16px 35px;
             border-radius: 30px;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-weight: bold;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
         }
 
         .btn-whatsapp i {
-            margin-right: 10px;
-            font-size: 1.5rem;
+            margin-right: 12px;
+            font-size: 1.6rem;
         }
 
         .btn-whatsapp:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
         }
 
-        /* Contentores / Grelha de Serviços */
+        /* Contentores e Grelha de Serviços */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -124,15 +128,23 @@
 
         .section-title {
             text-align: center;
-            font-size: 1.8rem;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--texto-cinza);
             margin-bottom: 40px;
-            position: relative;
+            font-size: 1rem;
         }
 
         .section-title::after {
             content: '';
             display: block;
-            width: 60px;
+            width: 80px;
             height: 3px;
             background-color: var(--vermelho-marca);
             margin: 10px auto 0 auto;
@@ -144,15 +156,14 @@
             gap: 25px;
         }
 
-        /* Cartões de Serviço (Direcionam para o Contate.me) */
+        /* Cartões de Serviço Integrados */
         .service-card {
             background-color: var(--bg-card);
-            border-radius: 10px;
-            padding: 25px;
+            border-radius: 12px;
+            padding: 30px 20px;
             text-align: center;
             border: 1px solid #21262d;
-            transition: border-color 0.3s ease, transform 0.3s ease;
-            cursor: pointer;
+            transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
             text-decoration: none;
             color: inherit;
         }
@@ -160,17 +171,18 @@
         .service-card:hover {
             transform: translateY(-5px);
             border-color: var(--verde-marca);
+            box-shadow: 0 5px 15px rgba(46, 164, 79, 0.2);
         }
 
         .service-icon {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: var(--verde-marca);
             margin-bottom: 15px;
         }
 
         .service-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            font-size: 1.35rem;
+            margin-bottom: 12px;
             color: var(--texto-claro);
         }
 
@@ -179,30 +191,39 @@
             font-size: 0.95rem;
         }
 
-        /* Diferenciais da Empresa */
+        /* Painel de Diferenciais (Ícones do Panfleto) */
         .diferenciais {
             background-color: var(--bg-card);
             padding: 40px 20px;
-            margin-top: 40px;
-            border-radius: 10px;
+            margin-top: 50px;
+            border-radius: 12px;
+            border: 1px solid #21262d;
         }
 
         .diferenciais-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
+            gap: 25px;
             text-align: center;
         }
 
         .diferencial-item i {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: var(--amarelo-marca);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .diferencial-item p {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: bold;
+        }
+
+        .diferencial-item span {
+            font-weight: normal;
+            color: var(--texto-cinza);
+            display: block;
+            font-size: 0.85rem;
+            margin-top: 4px;
         }
 
         /* Rodapé */
@@ -213,33 +234,50 @@
             margin-top: 60px;
             border-top: 1px solid #21262d;
             color: var(--texto-cinza);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
         footer p {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .footer-brand {
             color: var(--texto-claro);
             font-weight: bold;
+            font-size: 1.1rem;
         }
 
-        /* Botão Flutuante do WhatsApp permanente na tela */
+        /* Redes Sociais do Rodapé */
+        .social-links {
+            margin-bottom: 15px;
+        }
+
+        .social-links a {
+            color: var(--texto-claro);
+            font-size: 1.6rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--amarelo-marca);
+        }
+
+        /* Botão Flutuante do WhatsApp permanente */
         .wpp-floating {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 25px;
+            right: 25px;
             background-color: var(--wpp-cor);
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            font-size: 32px;
+            box-shadow: 3px 3px 15px rgba(0,0,0,0.6);
             z-index: 1000;
             transition: transform 0.3s ease;
         }
@@ -248,71 +286,47 @@
             transform: scale(1.1);
         }
 
-        /* Responsividade para Telas Pequenas */
+        /* Responsividade Telemóvel */
         @media (max-width: 600px) {
-            .logo-container h1 { font-size: 2rem; }
-            .hero h2 { font-size: 1.6rem; }
-            .section-title { font-size: 1.5rem; }
+            .logo-oficial { max-width: 250px; }
+            .hero h2 { font-size: 1.75rem; }
+            .section-title { font-size: 1.6rem; }
             .btn-whatsapp { width: 100%; justify-content: center; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Cabeçalho -->
+    <!-- Cabeçalho com o Logotipo Oficial -->
     <header>
-        <div class="logo-container">
-            <h1>GENESIS</h1>
-            <div class="subtitle">Manutenção Elétrica • Instalações Elétricas • Smart Home</div>
-            <div class="subtitle" style="color: var(--vermelho-marca); font-weight: bold; margin-top: 5px;">Formosa</div>
-            <div class="badge-avaliacao">
-                <i class="fa-solid fa-star"></i> 5.0 baseada em 78 avaliações
-            </div>
+        <!-- O arquivo "logo.png" deve estar salvo na mesma pasta do index.html no seu GitHub -->
+        <img src="logo.png" alt="Genesis Logo" class="logo-oficial">
+        <div class="header-location">FORMOSA</div>
+        <div class="badge-avaliacao">
+            <i class="fa-solid fa-star"></i> ELOGIOS 5.0 baseada em 78 avaliações
         </div>
     </header>
 
-    <!-- Topo do Funil (Chamada para Ação Principal) -->
+    <!-- Topo do Funil de Atendimento -->
     <section class="hero">
-        <h2>Energia Inteligente para <span>Casas e Empresas</span></h2>
-        <p>Soluções completas em elétrica e tecnologia de ponta em Formosa. Clique abaixo para solicitar o seu orçamento gratuito.</p>
-        <!-- Link do Funil Principal -->
-        <a href="https://www.contate.me/559187234979" class="btn-whatsapp" target="_blank">
+        <h2>ENERGIA INTELIGENTE PARA <span>CASAS E EMPRESAS</span></h2>
+        <p>Soluções completas em elétrica e tecnologia de ponta para a sua região em Formosa. Clique abaixo para iniciar o seu atendimento.</p>
+        <a href="https://contate.me" class="btn-whatsapp" target="_blank">
             <i class="fa-brands fa-whatsapp"></i> Fale com um Especialista
         </a>
     </section>
 
-    <!-- Secção de Serviços -->
+    <!-- Grelha de Serviços Completos -->
     <main class="container">
         <h2 class="section-title">Nossos Serviços</h2>
+        <p class="section-subtitle">Soluções completas em elétrica e tecnologia para sua casa ou empresa!</p>
         
         <div class="services-grid">
             
-            <!-- Serviço 1 -->
-            <a href="https://www.contate.me/559187234979" class="service-card" target="_blank">
+            <a href="https://contate.me" class="service-card" target="_blank">
                 <div class="service-icon"><i class="fa-solid fa-bolt"></i></div>
-                <h3>Quadro Elétrico</h3>
-                <p>Instalação, organização técnica e manutenção preventiva completa.</p>
+                <h3>QUADRO ELÉTRICO</h3>
+                <p>Instalação e organização técnica com foco em segurança.</p>
             </a>
 
-            <!-- Serviço 2 -->
-            <a href="https://www.contate.me/559187234979" class="service-card" target="_blank">
-                <div class="service-icon"><i class="fa-solid fa-lightbulb"></i></div>
-                <h3>Iluminação LED</h3>
-                <p>Projetos de iluminação modernos, económicos e personalizados.</p>
-            </a>
-
-            <!-- Serviço 3 -->
-            <a href="https://www.contate.me/559187234979" class="service-card" target="_blank">
-                <div class="service-icon"><i class="fa-solid fa-toggle-on"></i></div>
-                <h3>Tomadas e Interruptores</h3>
-                <p>Instalação ágil e substituição segura de dispositivos elétricos.</p>
-            </a>
-
-            <!-- Serviço 4 -->
-            <a href="https://www.contate.me/559187234979" class="service-card" target="_blank">
-                <div class="service-icon"><i class="fa-solid fa-fan"></i></div>
-                <h3>Ventiladores e Lustres</h3>
-                <p>Fixação segura, montagem estruturada e manutenção.</p>
-            </a>
-
-            <!-- Serviço 5 -->
+            <a href="https://contate.me" class="service-card" target="_blank">

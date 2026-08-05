@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis - Manutenção Elétrica, Instalações e Smart Home em Formosa</title>
+    <meta name="description" content="Soluções completas em elétrica e tecnologia para sua casa ou empresa em Formosa. Solicite seu orçamento gratuito.">
+    <!-- FontAwesome para Ícones -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        /* Cores Universais e Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --bg-principal: #0d1117;
+            --bg-card: #161b22;
+            --texto-claro: #f0f6fc;
+            --texto-cinza: #8b949e;
+            --verde-marca: #2ea44f;
+            --amarelo-marca: #f39c12;
+            --vermelho-marca: #ea4335;
+            --wpp-cor: #25d366;
+        }
+
+        body {
+            background-color: var(--bg-principal);
+            color: var(--texto-claro);
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho / Logo */
+        header {
+            background-color: var(--bg-card);
+            text-align: center;
+            padding: 30px 15px;
+            border-bottom: 3px solid var(--verde-marca);
+        }
+
+        .logo-container h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            color: var(--texto-claro);
+        }
+
+        .logo-container h1 span {
+            color: var(--amarelo-marca);
+        }
+
+        .subtitle {
+            color: var(--texto-cinza);
+            font-size: 1rem;
+            margin-top: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .badge-avaliacao {
+            display: inline-block;
+            background: rgba(243, 156, 18, 0.1);
+            color: var(--amarelo-marca);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            border: 1px solid var(--amarelo-marca);
+        }
+
+        /* Secção Principal / Hero (Início do Funil) */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-principal) 100%);
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 span {
+            color: var(--verde-marca);
+        }
+
+        .hero p {
+            color: var(--texto-cinza);
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            font-size: 1.1rem;
+        }
+
+        /* Botão de Conversão (WhatsApp) */
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--wpp-cor);
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+        }
+
+        /* Contentores / Grelha de Serviços */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--vermelho-marca);
+            margin: 10px auto 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* Cartões de Serviço (Mudam no clique para o WhatsApp - Funil) */
+        .service-card {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid #21262d;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--verde-marca);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--verde-marca);
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--texto-claro);
+        }
+
+        .service-card p {
+            color: var(--texto-cinza);
+            font-size: 0.95rem;
+        }
+
+        /* Diferenciais da Empresa */
+        .diferenciais {
+            background-color: var(--bg-card);
+            padding: 40px 20px;
+            margin-top: 40px;
+            border-radius: 10px;
+        }
+
+        .diferenciais-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .diferencial-item i {
+            font-size: 1.8rem;
+            color: var(--amarelo-marca);
+            margin-bottom: 10px;
+        }
+
+        .diferencial-item p {
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--bg-card);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 1px solid #21262d;
+            color: var(--texto-cinza);
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        .footer-brand {
+            color: var(--texto-claro);
+            font-weight: bold;
+        }
+
+        /* Botão Flutuante do WhatsApp permanente no ecrã */
+        .wpp-floating {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--wpp-cor);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .wpp-floating:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsividade para Ecrãs Pequenos */
+        @media (max-width: 600px) {
+            .logo-container h1 { font-size: 2rem; }
+            .hero h2 { font-size: 1.6rem; }
+            .section-title { font-size: 1.5rem; }
+            .btn-whatsapp { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo-container">
+            <h1>GENESIS</h1>
+            <div class="subtitle">Manutenção Elétrica • Instalações Elétricas • Smart Home</div>
+            <div class="subtitle" style="color: var(--vermelho-marca); font-weight: bold; margin-top: 5px;">Formosa</div>
+            <div class="badge-avaliacao">
+                <i class="fa-solid fa-star"></i> 5.0 baseada em 78 avaliações
+            </div>
+        </div>
+    </header>
+
+    <!-- Topo do Funil (Chamada para Ação Principal) -->
+    <section class="hero">
+        <h2>Energia Inteligente para <span>Casas e Empresas</span></h2>
+        <p>Soluções completas em elétrica e tecnologia de ponta em Formosa. Clique abaixo para solicitar o seu orçamento gratuito direto pelo WhatsApp.</p>
+        <!-- Link do Funil Principal -->
+        <a href="https://wa.me." class="btn-whatsapp" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> Fale com um Especialista
+        </a>
+    </section>
+
+    <!-- Secção de Serviços -->
+    <main class="container">
+        <h2 class="section-title">Nossos Serviços</h2>
+        
+        <div class="services-grid">
+            
+            <!-- Serviço 1 -->
+            <a href="https://wa.me." class="service-card" target="_blank">
+                <div class="service-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h3>Quadro Elétrico</h3>
+                <p>Instalação, organização técnica e manutenção preventiva completa.</p>
+            </a>
+
+            <!-- Serviço 2 -->
+            <a href="https://wa.me." class="service-card" target="_blank">
+                <div class="service-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                <h3>Iluminação LED</h3>
+                <p>Projetos de iluminação modernos, económicos e personalizados.</p>
+            </a>
+
+            <!-- Serviço 3 -->
+            <a href="https://wa.me." class="service-card" target="_blank">
+                <div class="service-icon"><i class="fa-solid fa-toggle-on"></i></div>
+                <h3>Tomadas e Interruptores</h3>
